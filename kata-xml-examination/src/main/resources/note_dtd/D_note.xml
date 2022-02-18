@@ -1,0 +1,8 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE note SYSTEM "note.dtd">
+<note>
+	<to>Jack</to>
+	<from>Bill</from>
+	<heading>Frage</heading>	
+	<body><comment>Ist heute das Meeting?</comment></body>
+</note>

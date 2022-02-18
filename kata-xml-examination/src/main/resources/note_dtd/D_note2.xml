@@ -1,0 +1,8 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE note SYSTEM "note2.dtd">
+<note>
+	<to>Bill</to>
+	<from>Jani</from>
+	<heading>Reminder</heading>
+	<body>Mittagessen heute um 12:00 Uhr</body>
+</note>

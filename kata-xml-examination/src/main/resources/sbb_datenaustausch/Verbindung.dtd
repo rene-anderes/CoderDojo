@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!ELEMENT Verbindung (Datum,Von,Nach,ReiseMit,Belegung,Bemerkung?)>
+<!ELEMENT Datum (#PCDATA)>
+<!ELEMENT Von (Bahnhof,Zeit,Gleis)>
+<!ELEMENT Nach (Bahnhof,Zeit,Gleis)>
+<!ELEMENT Bahnhof (#PCDATA)>
+<!ELEMENT Zeit (#PCDATA)>
+<!ELEMENT Gleis (#PCDATA)>
+<!ELEMENT ReiseMit (#PCDATA)>
+<!ELEMENT Belegung (ErsteKlasse,ZweiteKlasse)>
+<!ELEMENT ErsteKlasse (#PCDATA)>
+<!ELEMENT ZweiteKlasse (#PCDATA)>
+<!ELEMENT Bemerkung (#PCDATA)>

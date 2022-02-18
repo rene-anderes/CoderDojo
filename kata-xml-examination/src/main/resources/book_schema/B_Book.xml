@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<book category="CHILDREN" 
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	xsi:noNamespaceSchemaLocation="book.xsd">
+	<title lang="en">Harry Potter</title>
+	<author>J K. Rowling</author>
+	<year>2005</year>
+	<price>+29.99</price>
+</book>

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<weatherData xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"   xsi:noNamespaceSchemaLocation="weather.xsd">
+    <Date>2004-07-11</Date>
+    <Time>20:04:33</Time>
+    <GpsCoordinate>
+        <Latitude>47.422047</Latitude>
+        <Longitude>9.369001</Longitude>
+        <Altitude>675</Altitude>
+    </GpsCoordinate>
+    <Wind>
+        <Direction>NNO</Direction>
+        <Speed>
+            <Value>22</Value>
+            <Unit>Knoten</Unit>
+        </Speed>
+    </Wind>
+    <BarometricPressure>
+        <Value>980</Value>
+        <Unit>hPa</Unit>
+    </BarometricPressure>
+    <Temperatur>
+        <Value>20.4</Value>
+        <Unit>Grad</Unit>
+    </Temperatur>
+    <Density>1.1455</Density>
+</weatherData>

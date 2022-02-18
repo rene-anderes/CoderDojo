@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE note SYSTEM "note2.dtd">
+<note>
+	<to>Peter</to>
+    <to>Steve</to>
+    <to>John</to>
+	<from>Jani</from>
+	<heading>Video</heading>
+	<body>Treffpunkt für Videoaufnahmen: Eingang</body>
+</note>

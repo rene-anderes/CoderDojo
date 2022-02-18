@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+	<xs:element name="anmeldung">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="anrede"/>
+				<xs:element name="titel" type="standardoptional"/>
+				<xs:element name="nachname" type="standardmussfeld"/>
+				<xs:element name="vorname" type="standardmussfeld"/>
+				<xs:element name="firma" type="standardoptional"/>
+				<xs:element name="strasse" type="standardmussfeld"/>
+				<xs:element name="ort" type="standardmussfeld"/>
+				<xs:element ref="land"/>
+				<xs:element name="telefon" type="standardmussfeld"/>
+				<xs:element name="mobil" type="standardoptional"/>
+				<xs:element name="e-mail" type="standardmussfeld"/>
+				<xs:element ref="anzahl"/>
+				<xs:element ref="mitteilung"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="anrede">
+		<xs:simpleType>
+			<xs:restriction base="xs:string">
+				<xs:enumeration value="Herr"/>
+				<xs:enumeration value="Frau"/>
+			</xs:restriction>
+		</xs:simpleType>
+	</xs:element>
+	<xs:element name="land">
+		<xs:simpleType>
+			<xs:restriction base="xs:string">
+				<xs:enumeration value="Schweiz"/>
+				<xs:enumeration value="Österreich"/>
+				<xs:enumeration value="Deutschland"/>
+				<xs:enumeration value="Grossbritanien"/>
+			</xs:restriction>
+		</xs:simpleType>
+	</xs:element>
+	<xs:element name="anzahl">
+		<xs:simpleType>
+			<xs:restriction base="xs:positiveInteger">
+				<xs:maxInclusive value="10"/>
+			</xs:restriction>
+		</xs:simpleType>
+	</xs:element>
+	<xs:element name="mitteilung">
+		<xs:simpleType>
+			<xs:restriction base="xs:string">
+				<xs:minLength value="0"/>
+				<xs:maxLength value="1000"/>
+			</xs:restriction>
+		</xs:simpleType>
+	</xs:element>
+	<xs:simpleType name="standardmussfeld">
+		<xs:restriction base="xs:string">
+			<xs:minLength value="2"/>
+			<xs:maxLength value="200"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="standardoptional">
+		<xs:restriction base="xs:string">
+			<xs:minLength value="0"/>
+			<xs:maxLength value="200"/>
+		</xs:restriction>
+	</xs:simpleType>
+</xs:schema>

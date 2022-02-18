@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+    <xs:element name="weatherData">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="Date" type="xs:date" />
+                <xs:element name="Time" type="xs:time" />
+                <xs:element ref="GpsCoordinate" />
+                <xs:element ref="Wind" />
+                <xs:element name="BarometricPressure" type="measuredValue" />
+                <xs:element name="Temperatur" type="measuredValue" />
+                <xs:element name="Density" type="xs:double" />
+                <xs:element ref="Comment" minOccurs="0" />
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="GpsCoordinate">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="Latitude" type="xs:double" />
+                <xs:element name="Longitude" type="xs:double" />
+                <xs:element name="Altitude" type="xs:integer" />
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="Wind">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="Direction" type="windDirection" />
+                <xs:element name="Speed" type="measuredValue" />
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    
+    <xs:simpleType name="windDirection">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="S" />
+            <xs:enumeration value="SW" />
+            <xs:enumeration value="SSW" />
+            <xs:enumeration value="SO" />
+            <xs:enumeration value="SSO" />
+            <xs:enumeration value="N" />
+            <xs:enumeration value="NO" />
+            <xs:enumeration value="NNO" />
+            <xs:enumeration value="NW" />
+            <xs:enumeration value="NNW" />
+            <xs:enumeration value="ONO" />
+            <xs:enumeration value="O" />
+            <xs:enumeration value="OSO" />
+            <xs:enumeration value="W" />
+            <xs:enumeration value="WSW" />
+            <xs:enumeration value="WNW" />
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:element name="Comment">
+        <xs:simpleType>
+            <xs:restriction base="xs:string">
+                <xs:minLength value="1" />
+                <xs:maxLength value="100" />
+            </xs:restriction>
+        </xs:simpleType>
+    </xs:element>
+
+    <xs:complexType name="measuredValue">
+        <xs:sequence>
+            <xs:element ref="Value" />
+            <xs:element ref="Unit" />
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:element name="Value" type="xs:double" />
+    <xs:element name="Unit">
+        <xs:simpleType>
+            <xs:restriction base="xs:string">
+                <xs:minLength value="1" />
+                <xs:maxLength value="25" />
+            </xs:restriction>
+        </xs:simpleType>
+    </xs:element>
+
+</xs:schema>

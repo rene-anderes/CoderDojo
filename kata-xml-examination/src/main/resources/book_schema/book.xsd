@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+	<xs:element name="book">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="title"/>
+				<xs:element ref="author" maxOccurs="unbounded"/>
+				<xs:element name="year" type="year"/>
+				<xs:element name="price" type="xs:decimal"/>
+			</xs:sequence>
+			<xs:attribute name="category" use="required">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:enumeration value="CHILDREN"/>
+						<xs:enumeration value="COOKING"/>
+						<xs:enumeration value="WEB"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:attribute>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="title">
+		<xs:complexType>
+			<xs:simpleContent>
+				<xs:extension base="standardtext">
+					<xs:attribute name="lang" use="required">
+						<xs:simpleType>
+							<xs:restriction base="xs:string">
+								<xs:enumeration value="en"/>
+								<xs:enumeration value="de"/>
+								<xs:enumeration value="fr"/>
+								<xs:enumeration value="it"/>
+							</xs:restriction>
+						</xs:simpleType>
+					</xs:attribute>
+				</xs:extension>
+			</xs:simpleContent>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="author" type="standardtext"/>
+	<xs:simpleType name="standardtext">
+		<xs:restriction base="xs:string">
+			<xs:minLength value="1"/>
+			<xs:maxLength value="255"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="year">
+		<xs:restriction base="xs:positiveInteger">
+			<xs:minInclusive value="1000"/>
+			<xs:maxInclusive value="9999"/>
+		</xs:restriction>
+	</xs:simpleType>
+</xs:schema>
